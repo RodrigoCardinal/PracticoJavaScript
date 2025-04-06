@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 17</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let contador = 0;
+
+      const spanContador = document.getElementById("valor-contador");
+      const botonIncrementar = document.getElementById("btn-incrementar");
+
+      botonIncrementar.addEventListener("click", function () {
+        contador++;
+        spanContador.textContent = contador;
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <p>Valor actual: <span id="valor-contador">0</span></p>
+
+  <button id="btn-incrementar">Incrementar</button>
+</body>
+</html>

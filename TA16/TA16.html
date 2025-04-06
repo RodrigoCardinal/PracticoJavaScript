@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 16</title>
+        <script>
+            function mostrar() {
+            const parrafo = document.getElementById("mi-parrafo");
+            parrafo.style.display = "block";
+            }
+
+            function ocultar() {
+            const parrafo = document.getElementById("mi-parrafo");
+            parrafo.style.display = "none";
+        }
+        </script>
+    </head>
+    <body>
+        <h1>Mostrar o Ocultar párrafo</h1>
+
+        <p id="mi-parrafo"> Texto cualquiera.</p>
+
+        <button onclick="mostrar()">Mostrar</button>
+        <button onclick="ocultar()">Ocultar</button>
+    </body>
+</html>

@@ -1,30 +1,24 @@
 function generatePassword(length) {
-    if (length < 8) {
-        throw new Error("La longitud mínima de la contraseña es 8 caracteres.");
-    }
+  if (length < 8) {
+    throw new Error("La contraseña debe tener al menos 8 caracteres");
+  }
 
-    const lowerCase = 'abcdefghijklmnñopqrstuvwxyz';
-    const upperCase = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
-    const numbers = '0123456789';
-    const symbols = '!@#$%^&*()_-+=<>?/.~';
+  const min = "abcdefghijklmnñopqrstuvwxyz";
+  const may = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+  const num = "0123456789";
+  const symbolos = "!@#$%^&*()_+<>?";
 
-    const allCharacters = lowerCase + upperCase + numbers + symbols;
+  const all = min + may + num + symbolos;
 
-    let password = '';
+  let pasword = "";
 
-    const randomValues = new Uint32Array(length);
-    window.crypto.getRandomValues(randomValues);
+  for (let i = 0; i < length; i++) {
+    const randomChar = all.charAt(Math.floor(Math.random() * all.length));
+    pasword += randomChar;
+  }
 
-
-    
-    for (let i = 0; i < length; i++) {
-        const randomIndex = randomValues[i] % allCharacters.length;
-        password += allCharacters[randomIndex];
-    }
-
-    return password;
+  return pasword;
 }
 
-console.log(generatePassword(8)); 
-console.log(generatePassword(8)); 
-
+console.log(generatePassword(8));
+console.log(generatePassword(8));
